@@ -4,7 +4,7 @@
 
 **A plain-text markup language where one primitive expresses everything structured.**
 
-> Status: `0.1 draft`
+> Status: `1.0-draft`
 > Spec: [English](GEML-spec-draft.md) · [中文](GEML-spec-draft_CN.md)
 
 ---
@@ -201,7 +201,7 @@ geml history <commit | verify | show | restore> <file.geml>
 
 ## Status & spec
 
-GEML is a **`0.1 draft`**. The format is stable enough to write real documents in — this repo's own spec is written in GEML — but expect refinement before 1.0.
+GEML is at **`1.0-draft`**. The format is stable enough to write real documents in — this repo's own spec is written in GEML — but expect refinement before the final 1.0.
 
 | Document | English | 中文 |
 |----------|---------|------|

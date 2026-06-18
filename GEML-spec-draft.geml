@@ -3,7 +3,7 @@
 === meta
 name = "GEML"
 title = "General Expressive Markup Language"
-version = "0.1"
+version = "1.0-draft"
 status = "draft"
 extension = ".geml"
 description = "This document is itself written in GEML."

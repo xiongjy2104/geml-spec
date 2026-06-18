@@ -6,8 +6,8 @@
 
 | 字段 | 取值 |
 |------|------|
-| 扩展自 | GEML 0.1（见 [`GEML-spec-draft_CN.md`](GEML-spec-draft_CN.md)） |
-| 版本 | 0.1 |
+| 扩展自 | GEML 1.0-draft（见 [`GEML-spec-draft_CN.md`](GEML-spec-draft_CN.md)） |
+| 版本 | 1.0-draft |
 | 状态 | 草案（draft） |
 | 文件后缀 | `.gemlhistory` |
 
@@ -111,7 +111,7 @@
 
 === meta
 history-of        = "budget.geml"
-geml-version      = "0.1"
+geml-version      = "1.0-draft"
 current           = "20260617T103012Z-33ab12cd"
 keyframe-interval = 10
 ===

@@ -2,7 +2,7 @@
 
 === meta
 history-of        = "GEML-spec-draft.geml"
-geml-version      = "0.1"
+geml-version      = "1.0-draft"
 current           = "20260617T103012Z-2f815926"
 keyframe-interval = 10
 ===
@@ -14,7 +14,7 @@ keyframe-interval = 10
 === meta
 name = "GEML"
 title = "General Expressive Markup Language"
-version = "0.1"
+version = "1.0-draft"
 status = "draft"
 extension = ".geml"
 description = "This document is itself written in GEML."
