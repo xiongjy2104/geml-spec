@@ -48,14 +48,19 @@ for two different reasons that happen to point the same way:
   *use* — GEML currently produces **nothing**. It is more restrictive than even
   Markdown there: a `.geml` file is something you read, not something you operate.
 
-The single move that flips both verdicts is the same one: **stop positioning GEML
-as a rival to HTML, and position it as the typed, checkable *source* that
-compiles to the self-contained, interactive HTML artifact agents already
-hand-author today** (and to Markdown, and to PDF). That reframing turns "no raw
-HTML in the source" and "no renderer" from liabilities into the *point* —
-portable, checkable semantics in; multiple rich targets out. It is, not
-coincidentally, the Pandoc architecture. The rest of this document is about what
-it takes to make that real.
+The single move that flips both verdicts is the same one, and it is best said in
+GEML's own voice — as a positioning line GEML should put its name behind:
+
+> **GEML is not a competing runtime to HTML. It is the typed, checkable *source*
+> that compiles *into* HTML** — the very self-contained, interactive artifact you
+> ask an agent to hand-write today, but produced from a small, verifiable model,
+> with the cross-references already checked and the data kept in sync with its
+> chart, and emitting Markdown and PDF from the same source.
+
+That reframing turns "no raw HTML in the source" and "no renderer" from
+liabilities into the *point* — portable, checkable semantics in; multiple rich
+targets out. It is, not coincidentally, the Pandoc architecture. The rest of this
+document is about what it takes to make that real.
 
 ---
 
@@ -412,13 +417,17 @@ will.
 
 ## Part 4 — The central tension, and the bridge we both endorse
 
-We came in from opposite ends and converged on the same sentence, so let us state
-it jointly and plainly:
+We came in from opposite ends and converged on the same sentence. Here it is
+jointly and plainly — and deliberately in the first person, because this is the
+sentence GEML should lead with on its own homepage, not a recommendation we are
+making *about* GEML:
 
-> **GEML should not try to be a better runtime than HTML. It should be the typed,
-> checkable *source language* whose compiled output *is* the self-contained,
-> interactive HTML artifact — and also Markdown, and PDF — produced with
-> correctness guarantees that hand-written HTML cannot offer.**
+> **GEML is not a competing runtime to HTML. It is the typed, checkable *source*
+> that compiles *into* HTML — the very self-contained, interactive artifact you
+> ask an agent to hand-write today, but produced from a small, verifiable model:
+> the cross-references are already checked, the data and its chart are guaranteed
+> in sync, and the same source emits Markdown and PDF besides. HTML is the
+> destination; GEML is the source of truth that reaches it safely.**
 
 This is the Pandoc architecture, and it is proven: define the format by its
 abstract document model, then own the converters out of it. It dissolves the
