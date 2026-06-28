@@ -200,18 +200,35 @@ A companion specification — [`GEML-history-spec.md`](GEML-history-spec.md) —
 
 ## Reference parser & CLI
 
-A working reference parser and CLI live in [`geml-parser/`](geml-parser/) — TypeScript, Node 22. It covers spec §3–§8 and ships a test suite of 59 checks (including an element-rich kitchen-sink fixture and a real-world Markdown document).
+A working reference parser, **renderer**, and CLI live in [`geml-parser/`](geml-parser/) — TypeScript, Node 22. It covers spec §3–§8 and ships a test suite of 67 checks (including an element-rich kitchen-sink fixture and a real-world Markdown document).
 
 ```sh
 cd geml-parser
 npm install
 npm run build
-node dist/geml.js ../GEML-spec.geml      # parse → document-model JSON
+node dist/geml.js ../GEML-spec.geml                       # parse → document-model JSON
+node dist/geml.js render ../GEML-spec.geml -o spec.html   # render → self-contained HTML
 node dist/geml.js convert ../some.md -o out.geml
 npm test
 ```
 
 `node dist/geml.js <file.geml>` parses a document to the **document-model JSON** and exits non-zero if there are errors.
+
+### Render to a self-contained page
+
+`geml render` is the **runtime**: it turns a `.geml` file into one self-contained, interactive HTML file — the artifact you hand a person.
+
+```sh
+node dist/geml.js render <file.geml> [-o out.html]
+```
+
+- **One file, any browser, no server.** The CSS, the table interactivity, and every chart are inlined.
+- **Tables you can use.** Every table is sortable (click a header) and filterable (a search box), with computed columns and the summary row rendered.
+- **Charts are inline SVG, drawn from their table.** A `geml-chart` reads its bound table directly — no copied data — and bar, line, area, pie, and scatter are built in.
+- **The checks reach the page.** A dangling reference, a duplicate id, or a typo'd chart column fails the render with a non-zero exit. The build-time guarantees reach the artifact, not just the source.
+- **Self-contained by default.** A document of prose, tables, and charts pulls *zero* network. Math (KaTeX) and Mermaid diagrams load from a CDN, and only when the document uses them. Bundling those two offline is the next step.
+
+See [`examples/showcase.geml`](examples/showcase.geml) and its rendered [`examples/showcase.html`](examples/showcase.html); the spec itself renders to [`examples/GEML-spec.html`](examples/GEML-spec.html).
 
 ### Markdown → GEML converter
 
@@ -263,7 +280,9 @@ GEML-history-spec_CN.md      .gemlhistory extension (中文)
 GEML-spec.geml         The spec, written in GEML (dogfood)
 GEML-spec.gemlhistory  History-format sample
 COMPARISON.md                GEML vs other markup formats
-geml-parser/                 Reference parser + CLI (TypeScript, Node 22)
+EVALUATION.md                Joint design review (MacFarlane × Shihipar)
+geml-parser/                 Reference parser, renderer + CLI (TypeScript, Node 22)
+examples/                    Sample .geml docs and their rendered .html
 ```
 
 ## License
