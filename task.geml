@@ -1,0 +1,57 @@
+=== meta
+title = "GEML 推广路线图"
+updated = "2026-07-01"
+now = "第 1 步 · 发射前资产"
+===
+
+# GEML 推广路线图 {#top}
+
+%% Dogfood:本文件就是一个 .geml,`geml check task.geml` 校验。只在 tracker 分支。
+%% 按时间先后排——从上往下做。当前进行到 meta 的 `now` 字段所指那一步。
+
+=== note {.legend}
+一路从上往下推进。`[x]` = 已完成,`[ ]` = 待办;负责人:【你】= 你本人做,【我】= Claude 可独立做,【你+我】= 协作。发射文案见同分支的 `LAUNCH.md`。**当前在「第 1 步」。**
+===
+
+## 第 0 步 · 地基(已完成) {#done}
+
+- [x] GEML 1.0 规范(中 + 英)+ 自举 dogfood
+- [x] 参考实现 + 渲染器 + CLI,发布到 npm `@geml/geml`;agent 友好(`check`/`--json`/`fmt`/`export`/stdin)
+- [x] 浏览器 playground 上线,math / mermaid / 图表 / 表格全部真渲染
+- [x] README 按「可验证引用」楔子重定位;双协议(代码 MIT / 规范 CC-BY-4.0)
+- [x] 治理:GOVERNANCE + GEP 流程 + issue 表单(GEP-0001 精简 aside 已合并)
+- [x] GitHub Action(`geml check` 进 CI)
+- [x] VS Code 扩展、Obsidian 插件(已构建,尚未上架)
+- [x] tree-sitter 设计简报;《用你的语言写 GEML parser》指南 + 语言无关 fixtures
+- [x] 测试覆盖 ~93% 行 + CI 覆盖率门槛(≥90);修掉列表拆分 bug
+
+## 第 1 步 · 发射前资产(现在) {#assets}
+
+- [ ] 【你】录 15s GIF:playground 点「Break a reference」变红 → 存 `docs/demo.gif` → 【我】取消两份 README 图片注释 —— 唯一卡住视觉钩子的,约 15 分钟
+- [ ] 【我】旗舰博文《我让 AI 改了一个月文档:Markdown 烂了,GEML 当场拦住》—— 发射主弹药
+- [ ] 【我】Discord / Reddit 种子帖(分渠道角度)—— 预热文案,写进 `LAUNCH.md`
+
+## 第 2 步 · 预热 → 发射 {#launch}
+
+- [ ] 【你】GIF 做完后,把 playground 丢进 Latent Space / LLM Devs Discord,收 2–3 条反馈
+- [ ] 【你+我】拿一个真实 CI 接 geml-check-action,抓到一次坏引用 → 写成案例
+- [ ] 【你】Show HN(周二~四 美东 8–9am;守评论区 4 小时;标题/首评在 `LAUNCH.md`)
+- [ ] 【你】乘余热外扩:Lobsters → Reddit 错峰(r/LocalLLaMA、r/LLMDevs、r/programming)→ newsletters / awesome 列表
+
+## 第 3 步 · 分发扩张(发射后,并行) {#distribution}
+
+- [ ] 【你】发布 VS Code 扩展(注册 `geml-spec` publisher → `vsce publish`)
+- [ ] 【你】提交 Obsidian 插件到社区商店
+- [ ] 【你/我】把 geml-check-action 抽成独立 repo 并上 Marketplace
+- [ ] 【贡献者 / 我】tree-sitter 外部扫描器语法(解锁 Neovim / Helix / Zed 高亮)
+- [ ] 【你】GitHub Linguist 支持(等公开 `.geml` 文件够多再提,现在提会被拒)
+
+## 并行轨道 · 标准化($0,随时可推) {#standards}
+
+- [ ] 【你】招到第 2 个独立实现者(必须是另一个人)—— 用 parser 指南 + fixtures 当鱼饵
+- [ ] 【你】凑齐约 5 个真实支持者 → 开 W3C 社区组(这是 go / no-go 门槛)
+
+## 随时 · 技术零碎(不阻塞) {#misc}
+
+- [ ] 【我】`geml check` 多文件 / glob 支持(让 Action 更干净)
+- [ ] 【你/我】`@geml/geml` 1.0.1 补丁重发(修已发布包里 `--version` 的 spec 串 + repo URL)
